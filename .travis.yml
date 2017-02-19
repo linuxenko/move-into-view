@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "6"
+env:
+  global:
+    - secure: "utsYt/81fbXoS0xOgGfvY2eOo5wyynWd7+nnq9JS6BLU0GPgxqI0pY4WIGWYArtCaAYkDnfkDNP/tXU6EZnCG54NDRwzmlcfRiE0XE92eOgovVnQ0JLw9+WBGiPQ2hCyoP46gd3ISjLYtK+X7YwXTB/dlaDCphVKckOOMG7W91ajcSvZ5sevJ57hQBdRy+oytmGKn6b3IOF2OIehpQg8+j4ub3oeTcPnHjXKvBjRkp4ulZOq9+ZavtXflNdV4kbSvt6hf0cVK/dMQrr3pJmn7QHHVVPoPsMFGzOxS9/oPx2wki5NYac+UBfowx776TdKg/ZfW50jvn5StLVCEXfhkRou+AnUGy0yzd3usKBEg1vu8FpGssU3BIXtitRpvSkQgXPcBkWQH35HU2BIe1Q09MH3f7rcqJPCyOqs/CvR/8icpoLMR+TzT6XlZnzeCt29wnv2CV68hZJ2xYO0N5JAB2joB+IcTAJYJO5WcCd2ZZejfvGGJppfOcx72/MroA5BsB8X77va5mc7vZxrTeBKpL2KzDmTvmhZY+Rw9q86UANduyu5IUEd5vuHCBTW5BwIRQXcrpk6p/OxZcCqlqLK6nz/BSSDkjRL9/ScO+wzbVrgGLaNRN3QEC9OqnNJMk7ltNnb8DjLno9F4P+gkIYPb/TIfnxHVPkp8EztFacRvb0="
+install:
+  - npm i
+script:
+  - npm run lint
+  - npm run karma
