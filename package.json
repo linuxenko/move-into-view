@@ -4,7 +4,7 @@
   "description": "move-into-view is such as scroll-into-view but better.",
   "main": "index.js",
   "scripts": {
-    "test": "npm run lint && npm run karma",
+    "test": "npm run lint && npm run karma && codecov",
     "karma": "karma start ./.config/karma.ci-conf.js",
     "lint": "eslint ."
   },
@@ -25,6 +25,7 @@
     "browserify": "^13.3.0",
     "browserify-istanbul": "^2.0.0",
     "chai": "^3.5.0",
+    "codecov": "^1.0.1",
     "coveralls": "^2.11.15",
     "eslint": "^3.13.1",
     "eslint-config-standard": "^6.2.1",
