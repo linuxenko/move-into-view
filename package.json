@@ -1,16 +1,17 @@
 {
   "name": "move-into-view",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "description": "move-into-view is such as scroll-into-view but better.",
   "main": "index.js",
   "scripts": {
     "test": "npm run lint && npm run karma && codecov",
     "karma": "karma start ./.config/karma.ci-conf.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/linuxenko/move-into-view.git"
+    "url": "https://github.com/linuxenko/move-into-view.git"
   },
   "keywords": [
     "scroll"
@@ -42,6 +43,7 @@
     "karma-nyan-reporter": "^0.2.5",
     "karma-phantomjs-launcher": "^1.0.2",
     "mocha": "^3.2.0",
-    "watchify": "^3.8.0"
+    "watchify": "^3.8.0",
+    "semantic-release": "^6.3.2"
   }
 }
