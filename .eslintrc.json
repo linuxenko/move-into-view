@@ -5,15 +5,17 @@
         "standard",
         "promise"
     ],
-    "rules" : {
-      "semi" : [ "error", "always" ],
+    "rules": {
+      "semi": [ "error", "always" ],
       "standard/object-curly-even-spacing": [2, "either"]
     },
-    "globals" : {
-      "describe" : true,
-      "it" : true,
-      "window" : true,
-      "document" : true,
-      "expect" : true
+    "globals": {
+      "describe": true,
+      "it": true,
+      "window": true,
+      "document": true,
+      "expect": true,
+      "beforeEach": true,
+      "afterEach": true
     }
 }
