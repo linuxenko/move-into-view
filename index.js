@@ -68,8 +68,8 @@ function _position (aspectX, aspectY) {
   var wrapper = this.wrapper.getBoundingClientRect();
   var target = this.target.getBoundingClientRect();
 
-  var x = ~wrapper.left + target.left + (target.width * aspectX) - (parent.width * aspectX);
-  var y = ~wrapper.top + target.top + (target.height * aspectY) - parent.height * aspectY;
+  var x = 1 + ~wrapper.left + target.left + (target.width * aspectX) - (parent.width * aspectX);
+  var y = 1 + ~wrapper.top + target.top + (target.height * aspectY) - parent.height * aspectY;
 
   if (x < 0) x = 0;
   if ((wrapper.width - x) < parent.width) x = wrapper.width - parent.width;
