@@ -8,7 +8,7 @@
     "karma": "karma start karma.conf.js",
     "lint": "eslint .",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "prepublish": "mkdir -p dist && browserify --ignore-missing dist.js > move-into-view.js && browserify --ignore-missing dist.js | uglifyjs -c > move-into-view.min.js"
+    "prepublish": "browserify --ignore-missing dist.js > miw.js && browserify --ignore-missing dist.js | uglifyjs -c > miw.min.js"
   },
   "repository": {
     "type": "git",

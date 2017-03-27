@@ -26,8 +26,8 @@ coverage
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
-move-into-view.js
-move-into-view.min.js
+miw.js
+miw.min.js
 
 # Dependency directories
 node_modules
