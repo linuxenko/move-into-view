@@ -112,10 +112,12 @@ function MoveIntoView (target, options) {
   options = options || {};
   var parents = _parentsOf(target, options.isParent);
 
-  parents.parent.scrollTop = 0;
-  parents.parent.scrollLeft = 0;
-  parents.wrapper.scrollTop = 0;
-  parents.wrapper.scrollLeft = 0;
+  if (!options.noreset) {
+    parents.parent.scrollTop = 0;
+    parents.parent.scrollLeft = 0;
+    parents.wrapper.scrollTop = 0;
+    parents.wrapper.scrollLeft = 0;
+  }
 
   var view = {
     target: target,
