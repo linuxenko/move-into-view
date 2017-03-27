@@ -13,9 +13,9 @@ window.Element.prototype.moveIntoView = function (options) {
 
   var view = MoveIntoView(this);
 
-  if (options.x) {
+  if ('x' in options) {
     view.move.x(options.x);
-  } else if (options.y) {
+  } else if ('y' in options) {
     view.move.y(options.y);
   } else {
     view.move.both();
