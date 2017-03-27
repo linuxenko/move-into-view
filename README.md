@@ -34,6 +34,8 @@ debug
 `html` markup for example
 
 ```html
+ </style>
+
   <div class="parent">
     <div class="wrapper">
       <div class="child"></div>
@@ -62,6 +64,13 @@ var MoveIntoView = require('move-into-view');
 MoveIntoView(childElement).move.x(0.3);
 MoveIntoView(childElement).move.y(1);
 MoveIntoView(childElement).move.both(1);
+```
+
+Animations:
+```css
+  .wrapper {
+    transition: left .2s ease; /* anything */
+  }
 ```
 
 
