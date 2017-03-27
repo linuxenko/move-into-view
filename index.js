@@ -68,8 +68,8 @@ function _position (aspectX, aspectY) {
   var wrapper = this.wrapper.getBoundingClientRect();
   var target = this.target.getBoundingClientRect();
 
-  var x = target.left + (target.width * aspectX) - (parent.width * aspectX);
-  var y = target.top + (target.height * aspectY) - parent.height * aspectY;
+  var x = ~wrapper.left + target.left + (target.width * aspectX) - (parent.width * aspectX);
+  var y = ~wrapper.top + target.top + (target.height * aspectY) - parent.height * aspectY;
 
   if (x < 0) x = 0;
   if ((wrapper.width - x) < parent.width) x = wrapper.width - parent.width;
@@ -111,6 +111,12 @@ function MoveIntoView (target, options) {
   target = target || this;
   options = options || {};
   var parents = _parentsOf(target, options.isParent);
+
+  parents.parent.scrollTop = 0;
+  parents.parent.scrollLeft = 0;
+  parents.wrapper.scrollTop = 0;
+  parents.wrapper.scrollLeft = 0;
+
   var view = {
     target: target,
     wrapper: parents.wrapper,
