@@ -1,6 +1,6 @@
 {
   "name": "move-into-view",
-  "version": "0.0.0-development",
+  "version": "0.0.0",
   "description": "move-into-view is such as scroll-into-view but better.",
   "main": "index.js",
   "scripts": {
