@@ -50,17 +50,50 @@ function _parentsOf (target, isParent) {
   }
 }
 
+/**
+ * Calculate wrapper's position based on an aspect ratio provided
+ *
+ * @name _position
+ * @function
+ * @access private
+ * @param {Number} aspectX aspect x (default 0.5)
+ * @param {Number} aspectY aspect y (default 0.5)
+ * @returns {Object} Coordinates
+ */
+function _position (aspectX, aspectY) {
+  aspectX = (typeof aspectX === 'undefined') ? 0.5 : aspectX;
+  aspectY = (typeof aspectY === 'undefined') ? 0.5 : aspectY;
+
+  var parent = this.parent.getBoundingClientRect();
+  var wrapper = this.wrapper.getBoundingClientRect();
+  var target = this.target.getBoundingClientRect();
+
+  var x = target.left + (target.width * aspectX) - (parent.width * aspectX);
+  var y = target.top + (target.height * aspectY) - parent.height * aspectY;
+
+  if (x < 0) x = 0;
+  if ((wrapper.width - x) < parent.width) x = wrapper.width - parent.width;
+
+  if (y < 0) y = 0;
+  if ((wrapper.height - y) < parent.height) y = wrapper.height - parent.height;
+
+  return {
+    x: x,
+    y: y
+  };
+}
+
 function MoveIntoView (target, options) {
   options = options || {};
 
   var parents = _parentsOf(target, options.isParent);
 
-  var view = {
+  return {
+    target: target,
     wrapper: parents.wrapper,
-    parent: parents.parent
+    parent: parents.parent,
+    position: _position
   };
-
-  return view;
 }
 
 module.exports = MoveIntoView;

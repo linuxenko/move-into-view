@@ -38,9 +38,8 @@ var vMockCSS = {
 
   '.child': {
     'display': 'inline-block',
-    'width': '90px',
-    'height': '86px',
-    'margin': '0px 2px'
+    'width': '60px',
+    'height': '86px'
   }
 };
 
@@ -75,8 +74,8 @@ describe('Test element setup', function () {
 
     var wrapper = document.getElementById('wrapper');
 
-    expect(wrapper.getBoundingClientRect().width).to.be.equal(940);
-    expect(wrapper.childNodes[1].getBoundingClientRect().left).to.be.equal(96);
+    expect(wrapper.getBoundingClientRect().width).to.be.equal(600);
+    expect(wrapper.childNodes[1].getBoundingClientRect().left).to.be.equal(60);
   });
 
   it('should find out parent node', function () {
@@ -85,6 +84,38 @@ describe('Test element setup', function () {
 
     expect(MoveIntoView(firstChild).wrapper).to.be.equal(wrapper);
     expect(MoveIntoView(firstChild).parent).to.be.equal(vParent);
+  });
+
+  it('should handle negative x aspect ratios', function () {
+    var wrapper = document.getElementById('wrapper');
+    var view = MoveIntoView(wrapper.childNodes[0]);
+
+    expect(view.position(0.5).x).to.be.equal(0);
+    expect(view.position(0).x).to.be.equal(0);
+    expect(view.position(1).x).to.be.equal(0);
+  });
+
+  it('should handle x aspect ratios', function () {
+    var wrapper = document.getElementById('wrapper');
+    var view = MoveIntoView(wrapper.childNodes[1]);
+
+    expect(view.position(0).x).to.be.equal(60);
+    expect(view.position(0.5).x).to.be.equal(30);
+    expect(view.position(1).x).to.be.equal(0);
+  });
+
+  it('should handle over width x aspect ratios', function () {
+    var wrapper = document.getElementById('wrapper');
+    var view = MoveIntoView(wrapper.childNodes[8]);
+
+    expect(view.position(0).x).to.be.equal(480);
+    expect(view.position(0.5).x).to.be.equal(450);
+    expect(view.position(1).x).to.be.equal(420);
+
+    view = MoveIntoView(wrapper.childNodes[9]);
+    expect(view.position(0).x).to.be.equal(480);
+    expect(view.position(0.5).x).to.be.equal(480);
+    expect(view.position(1).x).to.be.equal(480);
   });
 });
 
