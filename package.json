@@ -1,6 +1,6 @@
 {
   "name": "move-into-view",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "move-into-view is such as scroll-into-view but better.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "karma": "karma start karma.conf.js",
     "lint": "eslint .",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "prepublish": "browserify --ignore-missing dist.js > miw.js && browserify --ignore-missing dist.js | uglifyjs -c > miw.min.js"
+    "prepublish": "browserify --ignore-missing shim.js > miw.js && browserify --ignore-missing shim.js | uglifyjs -c > miw.min.js"
   },
   "repository": {
     "type": "git",

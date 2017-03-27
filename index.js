@@ -107,6 +107,17 @@ function _move (dir, aspect) {
   return this;
 }
 
+/**
+ * Move specified target inside of a view (relative elements)
+ *
+ * @name MoveIntoView
+ * @function
+ * @access public
+ * @param {Element} target Target element
+ * @param {Object} options Options such as isParent()
+ * validation fn or noreset (do not reset scroll values)
+ * @returns {Object} view
+ */
 function MoveIntoView (target, options) {
   target = target || this;
   options = options || {};
