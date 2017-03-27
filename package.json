@@ -7,7 +7,8 @@
     "test": "npm run lint && npm run karma && codecov",
     "karma": "karma start karma.conf.js",
     "lint": "eslint .",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "prepublish": "mkdir -p dist && browserify --ignore-missing dist.js > move-into-view.js && browserify --ignore-missing dist.js | uglifyjs -c > move-into-view.min.js"
   },
   "repository": {
     "type": "git",
@@ -43,7 +44,8 @@
     "karma-nyan-reporter": "^0.2.5",
     "karma-phantomjs-launcher": "^1.0.2",
     "mocha": "^3.2.0",
-    "watchify": "^3.8.0",
-    "semantic-release": "^6.3.2"
+    "semantic-release": "^6.3.2",
+    "uglify-js": "^2.8.16",
+    "watchify": "^3.8.0"
   }
 }

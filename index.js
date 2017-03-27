@@ -83,17 +83,47 @@ function _position (aspectX, aspectY) {
   };
 }
 
+/**
+ * Applying elements position
+ *
+ * @name _move
+ * @function
+ * @access private
+ * @param {String} dir Direction
+ * @param {Number} aspectX
+ * @param {Number} aspectY
+ */
+function _move (dir, aspect) {
+  var position = this.position(aspect, aspect);
+
+  if (dir === 'x' || dir === 'both') {
+    this.wrapper.style.left = (position.x * -1) + 'px';
+  }
+
+  if (dir === 'y' || dir === 'both') {
+    this.wrapper.style.top = (position.y * -1) + 'px';
+  }
+
+  return this;
+}
+
 function MoveIntoView (target, options) {
+  target = target || this;
   options = options || {};
-
   var parents = _parentsOf(target, options.isParent);
-
-  return {
+  var view = {
     target: target,
     wrapper: parents.wrapper,
     parent: parents.parent,
-    position: _position
+    position: _position,
+    move: { }
   };
+
+  view.move.x = _move.bind(view, 'x');
+  view.move.y = _move.bind(view, 'y');
+  view.move.both = _move.bind(view, 'both');
+
+  return view;
 }
 
 module.exports = MoveIntoView;
