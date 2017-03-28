@@ -73,6 +73,16 @@ Animations:
   }
 ```
 
+Only calculated position without applying it into element:
+```js
+MoveIntoView(childElement).position(); // default 0.5 0.5
+MoveIntoView(childElement).position(1); // x: 1  y default 0.5
+
+MoveIntoView(childElement).position(0.5, 0.5); 
+
+// returns { x: Number, y: Number }
+```
+
 
 #### License
 
