@@ -66,7 +66,7 @@ MoveIntoView(childElement).move.y(1);
 MoveIntoView(childElement).move.both(1);
 ```
 
-Animations:
+Animate it using css:
 ```css
   .wrapper {
     transition: left .2s ease; /* anything */
