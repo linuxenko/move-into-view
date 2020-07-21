@@ -27,7 +27,7 @@
     "browserify": "^13.3.0",
     "browserify-istanbul": "^2.0.0",
     "chai": "^3.5.0",
-    "codecov": "^1.0.1",
+    "codecov": "^3.7.1",
     "coveralls": "^3.0.6",
     "csstate": "^1.1.0",
     "eslint": "^6.5.0",
